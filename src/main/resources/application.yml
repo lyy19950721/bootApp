@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: dev
+#mybatis
+mybatis:
+  type-aliases-package: com.fantuan.entity
+  mapper-locations: mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+#pagehelper
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countsql
+server:
+  connection-timeout: 20000
+  port: 8888
