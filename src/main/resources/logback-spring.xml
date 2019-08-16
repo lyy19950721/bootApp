@@ -10,8 +10,8 @@
     </springProfile>
 
     <springProfile name="pro">
-        <property name="LOG-DIR-INFO" value="/Users/lyy/Downloads/log/bootApp-info" />
-        <property name="LOG-DIR-ERROR" value="/Users/lyy/Downloads/log/bootApp-error" />
+        <property name="LOG-DIR-INFO" value="/home/log/bootApp/bootApp-info" />
+        <property name="LOG-DIR-ERROR" value="/home/log/bootApp/bootApp-error" />
     </springProfile>
 
     <!--输出到控制台-->

@@ -32,7 +32,7 @@
         <poi.version>4.0.1</poi.version>
         <swagger2.version>2.9.2</swagger2.version>
         <swagger2-bootstrap-ui.version>1.9.5</swagger2-bootstrap-ui.version>
-        <shiro.redis.version>2.4.2.1-RELEASE</shiro.redis.version>
+        <shiro.spring.version>1.4.0</shiro.spring.version>
         <shiro.redis.version>2.4.2.1-RELEASE</shiro.redis.version>
         <shiro.freemarker.tags.version>0.1</shiro.freemarker.tags.version>
     </properties>
@@ -227,13 +227,24 @@
     </dependencies>
 
     <build>
+        <finalName>bootApp</finalName>
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <source>${java.version}</source>-->
+<!--                    <target>${java.version}</target>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <mainClass>com.mipo.App</mainClass>
                 </configuration>
             </plugin>
         </plugins>
