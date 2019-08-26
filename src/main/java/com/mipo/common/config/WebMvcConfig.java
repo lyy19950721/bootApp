@@ -11,12 +11,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebMvcConfig implements WebMvcConfigurer {
 
     @Autowired
-    private AppInterceptor smartFinanceInterceptor;
+    private AppInterceptor appInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
 
-        registry.addInterceptor(smartFinanceInterceptor).addPathPatterns("/**");
+        registry.addInterceptor(appInterceptor).addPathPatterns("/**");
 
     }
 
