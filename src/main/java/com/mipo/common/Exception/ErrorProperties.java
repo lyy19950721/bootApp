@@ -1,6 +1,6 @@
 package com.mipo.common.Exception;
 
-import com.mipo.common.util.ContextUtil;
+import com.mipo.common.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
@@ -45,10 +45,16 @@ public class ErrorProperties {
         }
 
         String value = props.getProperty(key);
-        String[] split = value.split(",");
-        if(ContextUtil.getCurrentContext().getLanguageType().equalsIgnoreCase("EN")){
-            return split[0];
+
+//        String[] split = value.split(",");
+//        if(ContextUtil.getCurrentContext().getLanguageType().equalsIgnoreCase("EN")){
+//            return split[0];
+//        }
+//        return split[1];
+
+        if(StringUtils.isEmpty(value)) {
+            value = "未知error";
         }
-        return split[1];
+        return value;
     }
 }

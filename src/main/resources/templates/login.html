@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!--<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>-->
+<!--<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+<script th:src="@{/jquery/jquery-3.3.1.min.js}"></script>
+<link rel="stylesheet" th:href="@{/layui/css/layui.css}">
+<script th:src="@{/layui/layui.js}"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form class="layui-form" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label">账号</label>
+        <div class="layui-input-inline">
+            <input type="text" name="userName" required  lay-verify="required" placeholder="请输入账号" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">密码框</label>
+        <div class="layui-input-inline">
+            <input type="password" name="passWord" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+
+</body>
+<script>
+    //Demo
+    layui.use('form', function(){
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            var form_data = JSON.stringify(data.field);
+            layer.msg(form_data);
+
+            $.ajax({
+                type:"POST",
+                url:"login/toLogin",
+                data:form_data,
+                dataType:"json",
+                contentType: 'application/json;charset=UTF-8',
+                success:function(){
+                    window.location.href = "index.html";
+            },
+            error:function(jqXHR){
+                layer.msg("发生错误："+ jqXHR.status);
+            }
+            });
+
+            return false;
+        });
+    });
+</script>
+</html>
