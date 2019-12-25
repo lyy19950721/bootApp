@@ -6,7 +6,7 @@ spring:
       username: root
       password: rootroot
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/new_need?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+      url: jdbc:mysql://localhost:3306/shiro?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
       type: com.alibaba.druid.pool.DruidDataSource
       #数据源其他配置
       #配置初始化大小、最小、最大 (通常来说，只需要修改initialSize、minIdle、maxActive)
@@ -35,7 +35,7 @@ spring:
       username: root
       password: rootroot
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/new_need?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+      url: jdbc:mysql://localhost:3306/shiro?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
       type: com.alibaba.druid.pool.DruidDataSource
       #数据源其他配置
       #配置初始化大小、最小、最大 (通常来说，只需要修改initialSize、minIdle、maxActive)
@@ -63,7 +63,7 @@ spring:
     database: 0
     host: 127.0.0.1
     port: 6379
-    password:
+    password: abcdefg
     # 连接超时时间（毫秒）
     timeout: 1000
     jedis:

@@ -67,7 +67,7 @@ public class DruidConfig {
         return transactionManager;
     }
 
-    @Bean
+   /* @Bean
     public SqlSessionFactory getSqlSessionFactory(@Qualifier("dataSource") DynamicDataSource dataSource) {
         try {
             SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
@@ -83,7 +83,7 @@ public class DruidConfig {
     public SqlSessionTemplate getSqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
         SqlSessionTemplate template = new SqlSessionTemplate(sqlSessionFactory);
         return template;
-    }
+    }*/
 
 
     //配置Druid的监控

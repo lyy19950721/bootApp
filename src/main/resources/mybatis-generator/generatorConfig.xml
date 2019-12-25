@@ -35,19 +35,19 @@
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
-        <table domainObjectName="Role" tableName="sys_role" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+        <!--<table domainObjectName="Role" tableName="sys_role" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                   enableUpdateByExample="false"/>
+-->
+        <table  domainObjectName="User" tableName="sys_user" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+                enableUpdateByExample="false"/>
 
-        <table domainObjectName="User" tableName="sys_user" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-
-        <table domainObjectName="Resources" tableName="sys_resources" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+        <!--<table domainObjectName="Resources" tableName="sys_resources" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false"/>
 
         <table domainObjectName="UserRole" tableName="sys_user_role" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false"/>
 
         <table domainObjectName="RoleResources" tableName="sys_role_resources" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
+               enableUpdateByExample="false"/>-->
     </context>
 </generatorConfiguration>
