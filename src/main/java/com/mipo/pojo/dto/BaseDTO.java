@@ -14,5 +14,5 @@ public class BaseDTO {
 
     @ApiModelProperty(name = "pageSize", value = "每页显示条数, 值大于0", required = true)
     @Min(value = 1, message = "ERROR_CODE_001")
-    private int pageSize;
+    private int pageSize = 3;
 }

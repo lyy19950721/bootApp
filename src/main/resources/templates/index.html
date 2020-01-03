@@ -1,10 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.css}"></link>
 </head>
 <body>
      <h1>good!!!</h1>
+     <br/>
+     <h1>用户列表</h1>
+     <br/><br/>
+     <div class="with:80%">
+         <table class="table table-hover">
+             <thead>
+             <tr>
+                 <th>#</th>
+                 <th>User Name</th>
+                 <th>Password</th>
+             </tr>
+             </thead>
+             <tbody>
+             <tr  th:each="user : ${pageInfo.getList()}">
+                 <th scope="row" th:text="${user.id}">1</th>
+                 <td th:text="${user.username}">neo</td>
+                 <td th:text="${user.password}">Otto</td>
+             </tr>
+             </tbody>
+         </table>
+     </div>
+
+      <div align="center">
+          <a class="allpage"><b th:text="'共 '+ ${pageInfo.getPages()}+ ' 页'"></b></a>
+          <a  th:href="@{/list(pageNum=${pageInfo.getFirstPage()})}"  >首页</a>
+          <a th:if="${pageInfo.hasPreviousPage()} == true" th:href="@{/list(pageNum=${pageInfo.getPrePage()})}"  >上一页</a>
+          <a th:href="@{'/list?currentPage=' + ${i}}"  th:each="i :${#numbers.sequence(pageInfo.firstPage, pageInfo.lastPage)}" th:text="  ${i}"   th:class="${pageInfo.getPageNumber() == i}? 'page-item active' :' page-item' "></a>
+          <a th:if="${pageInfo.hasNextPage()} == true" th:href="@{/list(pageNum=${pageInfo.getNextPage()})}" >下一页</a>
+          <a th:href="@{/list(pageNum=${pageInfo.getLastPage()})}" >尾页</a>
+      </div>
+
+<!--     <table class="table">-->
+<!--         <tr th:each="flpcDTO : ${userDTOList} ">-->
+<!--             <td></td>-->
+<!--         </tr>-->
+<!--     </table>-->
+<!--     <div align="center">-->
+<!--         <a class="allpage"><b th:text="'共 '+ ${pageInfo.getPages()}+ ' 页'"></b></a>-->
+<!--         <a  th:href="@{/findUserList.do(currentPage=${pageInfo.getFirstPage()})}"  >首页</a>-->
+<!--         <a th:if="${pageInfo.hasPreviousPage()} == true" th:href="@{/findUserList.do(currentPage=${pageInfo.getPrePage()})}"  >上一页</a>-->
+<!--         <a th:href="@{'/findUserList.do?currentPage=' + ${i}}"  th:each="i :${#numbers.sequence(pageInfo.firstPage, pageInfo.lastPage)}" th:text="  ${i}"   th:class="${pageInfo.getPageNumber() == i}? 'page-item active' :' page-item' "></a>-->
+<!--         <a th:if="${pageInfo.hasNextPage()} == true" th:href="@{/findUserList.do(currentPage=${pageInfo.getNextPage()})}" >下一页</a>-->
+<!--         <a th:href="@{/findUserList.do(currentPage=${pageInfo.getLastPage()})}" >尾页</a>-->
+<!--     </div>-->
 </body>
+
 </html>
