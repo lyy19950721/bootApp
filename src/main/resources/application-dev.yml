@@ -4,7 +4,7 @@ spring:
     datasource:
       #数据源基本配置
       username: root
-      password: rootroot
+      password: root
       driver-class-name: com.mysql.jdbc.Driver
       url: jdbc:mysql://localhost:3306/shiro?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
       type: com.alibaba.druid.pool.DruidDataSource
@@ -63,7 +63,7 @@ spring:
     database: 0
     host: 127.0.0.1
     port: 6379
-    password: abcdefg
+    password: root
     # 连接超时时间（毫秒）
     timeout: 1000
     jedis:
@@ -89,3 +89,12 @@ spring:
           starttls:
             enable: true
             required: true
+  # rabbitmq
+  rabbitmq:
+    host: localhost
+    port: 5672
+    virtual-host: /mall
+    username: mall
+    password: mall
+    publisher-confirms: true #消息发送到交换器确认
+    publisher-returns: true #消息发送到队列确认

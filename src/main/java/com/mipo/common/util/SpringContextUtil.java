@@ -31,4 +31,15 @@ public class SpringContextUtil implements ApplicationContextAware {
     public static HttpServletResponse getHttpServletReponse() {
         return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getResponse();
     }
+
+    /**
+     * 获取对象
+     *
+     * @param name
+     * @return Object
+     * @throws BeansException
+     */
+    public static Object getBean(String name) throws BeansException {
+        return context.getBean(name);
+    }
 }

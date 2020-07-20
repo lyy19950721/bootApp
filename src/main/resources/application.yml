@@ -34,4 +34,6 @@ server:
     mode: HTML5
     prefix: classpath:/templates/
     suffix: .html
-
+logging:
+  level:
+    io.swagger.models.parameters.AbstractSerializableParameter: error
