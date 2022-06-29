@@ -29,7 +29,7 @@
         <jedis.version>3.0.1</jedis.version>
         <common.version>3.8</common.version>
         <fastjson.version>1.2.51</fastjson.version>
-        <poi.version>4.0.1</poi.version>
+        <poi.version>4.1.1</poi.version>
         <swagger2.version>2.9.2</swagger2.version>
         <swagger2-bootstrap-ui.version>1.9.5</swagger2-bootstrap-ui.version>
         <shiro.spring.version>1.4.0</shiro.spring.version>
